@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cruiseguesttours",
+  "info": {
+    "singularName": "cruiseguesttour",
+    "pluralName": "cruiseguesttours",
+    "displayName": "cruiseguesttour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

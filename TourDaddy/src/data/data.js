@@ -191,34 +191,6 @@ export const packages = [
         title: 'Caño Cristales River Trip',
         amount: '$ 58 / Day'
     },
-    {
-        id: 9,
-        image: listing9,
-        place: 'Pattaya',
-        title: 'Osa Peninsula to Dominical',
-        amount: '$ 58 / Day'
-    },
-    {
-        id: 10,
-        image: listing10,
-        place: 'Lakshadweep',
-        title: 'History of The Emporer',
-        amount: '$ 58 / Day'
-    },
-    {
-        id: 11,
-        image: listing11,
-        place: 'Paris',
-        title: 'Wildness of Paris',
-        amount: '$ 58 / Day'
-    },
-    {
-        id: 12,
-        image: listing12,
-        place: 'London',
-        title: 'The Hills and Mountains',
-        amount: '$ 58 / Day'
-    },
 ]
 
 export const ClientData = [

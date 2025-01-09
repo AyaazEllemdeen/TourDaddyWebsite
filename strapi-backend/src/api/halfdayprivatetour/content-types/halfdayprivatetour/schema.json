@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "halfdayprivatetours",
+  "info": {
+    "singularName": "halfdayprivatetour",
+    "pluralName": "halfdayprivatetours",
+    "displayName": "halfdayprivatetour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

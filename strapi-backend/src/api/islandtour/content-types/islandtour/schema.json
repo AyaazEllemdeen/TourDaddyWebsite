@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "islandtours",
+  "info": {
+    "singularName": "islandtour",
+    "pluralName": "islandtours",
+    "displayName": "islandtour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

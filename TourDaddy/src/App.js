@@ -22,12 +22,26 @@ import BlogStandard from './pages/blog/blog-standard'
 import BlogDetail from './pages/blog/blog-detail'
 import Contact from './pages/contact'
 import YachtDetail from './pages/listing/tour-detail/yacht-detail';
+import ComboToursGrid from './pages/listing/tour-grid/combotoursgrid';
+import PrivateToursGrid from './pages/listing/tour-grid/privatetoursgrid';
+import HalfdayprivateToursGrid from './pages/listing/tour-grid/halfdayprivatetoursgrid';
+import CruiseguestToursGrid from './pages/listing/tour-grid/cruiseguesttoursgrid';
+import HalfdaygroupToursGrid from './pages/listing/tour-grid/halfdaygrouptoursgrid';
+import FlightToursGrid from './pages/listing/tour-grid/flighttoursgrid';
+import IslandToursGrid from './pages/listing/tour-grid/islandtoursgrid';
 
 
 function App() {
   return (
    <Routes>
     <Route path="/" element={<Index/>}/>
+    <Route path="/tours/503781" element={<FlightToursGrid />} />
+    <Route path="/tours/597642" element={<IslandToursGrid />} />
+    <Route path="/tours/596669" element={<HalfdayprivateToursGrid />} />
+    <Route path="/tours/597613" element={<HalfdaygroupToursGrid />} />
+    <Route path="/tours/596671" element={<CruiseguestToursGrid />} />
+    <Route path="/tours/503782" element={<ComboToursGrid />} />
+    <Route path="/tours/503787" element={<PrivateToursGrid />} />
     <Route path="/tours/502052" element={<DayToursGrid />} />
     <Route path="/yachtgrid" element={<YachtGrid/>}/>
     <Route path="/listing/tour-detail/yacht-detail" element={<YachtDetail />} />

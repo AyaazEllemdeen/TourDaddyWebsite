@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homelists",
+  "info": {
+    "singularName": "homelist",
+    "pluralName": "homelists",
+    "displayName": "homelist"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

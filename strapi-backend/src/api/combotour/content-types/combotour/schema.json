@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "combotours",
+  "info": {
+    "singularName": "combotour",
+    "pluralName": "combotours",
+    "displayName": "combotour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

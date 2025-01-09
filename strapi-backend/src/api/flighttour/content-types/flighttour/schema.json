@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flighttours",
+  "info": {
+    "singularName": "flighttour",
+    "pluralName": "flighttours",
+    "displayName": "flighttour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

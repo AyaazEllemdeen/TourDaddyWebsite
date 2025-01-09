@@ -397,6 +397,63 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCombotourCombotour extends Struct.CollectionTypeSchema {
+  collectionName: 'combotours';
+  info: {
+    displayName: 'combotour';
+    pluralName: 'combotours';
+    singularName: 'combotour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::combotour.combotour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCruiseguesttourCruiseguesttour
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cruiseguesttours';
+  info: {
+    displayName: 'cruiseguesttour';
+    pluralName: 'cruiseguesttours';
+    singularName: 'cruiseguesttour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cruiseguesttour.cruiseguesttour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDaytourDaytour extends Struct.CollectionTypeSchema {
   collectionName: 'daytours';
   info: {
@@ -415,6 +472,176 @@ export interface ApiDaytourDaytour extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::daytour.daytour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFlighttourFlighttour extends Struct.CollectionTypeSchema {
+  collectionName: 'flighttours';
+  info: {
+    displayName: 'flighttour';
+    pluralName: 'flighttours';
+    singularName: 'flighttour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::flighttour.flighttour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHalfdaygrouptourHalfdaygrouptour
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'halfdaygrouptours';
+  info: {
+    displayName: 'halfdaygrouptour';
+    pluralName: 'halfdaygrouptours';
+    singularName: 'halfdaygrouptour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::halfdaygrouptour.halfdaygrouptour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHalfdayprivatetourHalfdayprivatetour
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'halfdayprivatetours';
+  info: {
+    displayName: 'halfdayprivatetour';
+    pluralName: 'halfdayprivatetours';
+    singularName: 'halfdayprivatetour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::halfdayprivatetour.halfdayprivatetour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomelistHomelist extends Struct.CollectionTypeSchema {
+  collectionName: 'homelists';
+  info: {
+    displayName: 'homelist';
+    pluralName: 'homelists';
+    singularName: 'homelist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homelist.homelist'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIslandtourIslandtour extends Struct.CollectionTypeSchema {
+  collectionName: 'islandtours';
+  info: {
+    displayName: 'islandtour';
+    pluralName: 'islandtours';
+    singularName: 'islandtour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::islandtour.islandtour'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivatetourPrivatetour extends Struct.CollectionTypeSchema {
+  collectionName: 'privatetours';
+  info: {
+    displayName: 'privatetour';
+    pluralName: 'privatetours';
+    singularName: 'privatetour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privatetour.privatetour'
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
@@ -935,7 +1162,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
+      'api::combotour.combotour': ApiCombotourCombotour;
+      'api::cruiseguesttour.cruiseguesttour': ApiCruiseguesttourCruiseguesttour;
       'api::daytour.daytour': ApiDaytourDaytour;
+      'api::flighttour.flighttour': ApiFlighttourFlighttour;
+      'api::halfdaygrouptour.halfdaygrouptour': ApiHalfdaygrouptourHalfdaygrouptour;
+      'api::halfdayprivatetour.halfdayprivatetour': ApiHalfdayprivatetourHalfdayprivatetour;
+      'api::homelist.homelist': ApiHomelistHomelist;
+      'api::islandtour.islandtour': ApiIslandtourIslandtour;
+      'api::privatetour.privatetour': ApiPrivatetourPrivatetour;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
