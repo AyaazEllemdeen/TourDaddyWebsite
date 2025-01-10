@@ -48,7 +48,7 @@ export default function Navbar({ navclass, navlight, manuclass }) {
         // Fetch tour categories from Strapi
         const fetchTourCategories = async () => {
             try {
-                const response = await axios.get('https://delicate-rhythm-1a2ffffd6a.strapiapp.com/api/categories');
+                const response = await axios.get('https://funny-dog-d974027758.strapiapp.com/api/categories');
                 setTourCategories(response.data.categories || []); 
             } catch (error) {
                 console.error("Error fetching tour categories:", error);

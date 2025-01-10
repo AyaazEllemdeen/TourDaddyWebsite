@@ -11,7 +11,7 @@ const TourGrid = () => {
 
   // Fetch data from the API
   useEffect(() => {
-    axios.get('https://delicate-rhythm-1a2ffffd6a.strapiapp.com/api/halfdayprivatetour')
+    axios.get('https://funny-dog-d974027758.strapiapp.com/api/halfdayprivatetour')
       .then(response => {
         setTours(response.data.products);  // Assuming your response is in this format
       })

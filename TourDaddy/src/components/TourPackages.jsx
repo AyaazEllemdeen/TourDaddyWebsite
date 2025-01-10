@@ -8,7 +8,7 @@ const TourPackages = () => {
     useEffect(() => {
         const fetchPackages = async () => {
             try {
-                const response = await fetch('https://delicate-rhythm-1a2ffffd6a.strapiapp.com/api/homelist');
+                const response = await fetch('https://funny-dog-d974027758.strapiapp.com/api/homelist');
                 const data = await response.json();
 
                 // Format the data to match the structure needed

@@ -219,7 +219,7 @@ export const blogData = [
         id: 1,
         image: blog1,
         date: '13th Sep 2024',
-        title: 'This Spanish city is a feast for the eyes: Travosy',
+        title: 'This Spanish city is a feast for the eyes: TourDaddy',
         desc: 'This is required when, for example, the final text is not yet available.',
         tag: 'Travel'
     },
@@ -235,7 +235,7 @@ export const blogData = [
         id: 3,
         image: blog3,
         date: '29th Dec 2024',
-        title: 'When you visit the Eternal Rome City: Travosy',
+        title: 'When you visit the Eternal Rome City: TourDaddy',
         desc: 'This is required when, for example, the final text is not yet available.',
         tag: 'Tourist'
     },
@@ -359,7 +359,7 @@ export const faqData = [
     },
     {
         id: 2,
-        title: 'Do I need a designer to use Travosy ?',
+        title: 'Do I need a designer to use TourDaddy ?',
         desc: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.'
     },
     {
@@ -523,7 +523,7 @@ export const guidesData = [
     {
         title: 'Your listings',
         subData: [
-            'Updating your listing', 'Neighbourhoods', 'Listing photos & photography', 'Travosy Plus', 'API-connected software'
+            'Updating your listing', 'Neighbourhoods', 'Listing photos & photography', 'TourDaddy Plus', 'API-connected software'
         ]
     },
     {
@@ -535,7 +535,7 @@ export const guidesData = [
     {
         title: 'Your reservations',
         subData: [
-            'Travosy safely', 'Travosy Experiences and Adventures', 'Changing a reservation', 'Cancelling a reservation', 'Long-term reservations'
+            'TourDaddy safely', 'TourDaddy Experiences and Adventures', 'Changing a reservation', 'Cancelling a reservation', 'Long-term reservations'
         ]
     },
     {
