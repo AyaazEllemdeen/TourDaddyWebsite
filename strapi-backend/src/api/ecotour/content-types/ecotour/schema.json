@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ecotours",
+  "info": {
+    "singularName": "ecotour",
+    "pluralName": "ecotours",
+    "displayName": "ecotour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

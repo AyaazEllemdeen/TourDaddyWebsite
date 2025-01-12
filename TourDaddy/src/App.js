@@ -29,6 +29,9 @@ import CruiseguestToursGrid from './pages/listing/tour-grid/cruiseguesttoursgrid
 import HalfdaygroupToursGrid from './pages/listing/tour-grid/halfdaygrouptoursgrid';
 import FlightToursGrid from './pages/listing/tour-grid/flighttoursgrid';
 import IslandToursGrid from './pages/listing/tour-grid/islandtoursgrid';
+import EcoToursGrid from './pages/listing/tour-grid/ecotoursgrid';
+import DivingToursGrid from './pages/listing/tour-grid/divingtoursgrid';
+import FishingcharterToursGrid from './pages/listing/tour-grid/fishingchartertoursgrid';
 
 
 function App() {
@@ -36,6 +39,9 @@ function App() {
    <Routes>
     <Route path="/" element={<Index/>}/>
     <Route path="/tours/503781" element={<FlightToursGrid />} />
+    <Route path="/tours/600541" element={<FishingcharterToursGrid />} />
+    <Route path="/tours/600540" element={<DivingToursGrid />} />
+    <Route path="/tours/600520" element={<EcoToursGrid />} />
     <Route path="/tours/597642" element={<IslandToursGrid />} />
     <Route path="/tours/596669" element={<HalfdayprivateToursGrid />} />
     <Route path="/tours/597613" element={<HalfdaygroupToursGrid />} />

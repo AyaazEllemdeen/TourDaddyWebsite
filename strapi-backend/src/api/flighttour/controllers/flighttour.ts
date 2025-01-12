@@ -13,11 +13,13 @@ export default {
 
       // Extract necessary details from the response
       const products = response.data.products.map((product: any) => ({
-        name: product.name,
-        shortDescription: product.shortDescription,
-        advertisedPrice: product.advertisedPrice,
-        imageUrl: product.images?.[0]?.itemUrl || "", // Grab the first image URL
+        name: product.name || "Unknown Name", 
+        productCode: product.productCode || "Unknown Code", 
+        shortDescription: product.shortDescription || "No description available", 
+        advertisedPrice: product.advertisedPrice || "Price not available", 
+        imageUrl: product.images?.[0]?.itemUrl || "", 
       }));
+
 
       // If no products are returned, throw an error
       if (!products || products.length === 0) {

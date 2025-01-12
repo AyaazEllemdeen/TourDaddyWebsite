@@ -2,29 +2,34 @@ import { Context } from "koa";
 import axios from "axios";
 
 const API_KEY = "ee733bd95f124758807d221055c06a5c";
-const CATEGORY_IDS = [
-    502052, // FULL DAY GROUP TOURS
-    503781, // FLIGHT TOURS
-    503782, // COMBO TOURS
-    503787, // PRIVATE FULL DAY BOAT TOURS
-    596669, // HALF DAY PRIVATE TOURS
-    596671, // SUITABLE FOR CRUISE GUESTS
-    597613, // HALF DAY GROUP TOURS
-    597642, // ISLAND TOURS
-];
 
 export default {
     async find(ctx: Context) {
         try {
+            // Fetch all category IDs
+            const fetchCategoryIds = async () => {
+                const url = `https://api.rezdy.com/v1/categories`;
+                const response = await axios.get(url, { params: { apiKey: API_KEY } });
+                return response.data.categories.map((category: any) => category.id); // Extract IDs
+            };
+
+            // Fetch products for a specific category
             const fetchCategoryProducts = async (categoryId: number) => {
                 const url = `https://api.rezdy.com/v1/categories/${categoryId}/products`;
                 const response = await axios.get(url, { params: { apiKey: API_KEY } });
                 return response.data.products || [];
             };
 
+            // Get all category IDs
+            const categoryIds = await fetchCategoryIds();
+
+            if (!categoryIds || categoryIds.length === 0) {
+                ctx.throw(500, "No categories returned from Rezdy API");
+            }
+
             // Fetch products for all categories
             const allProducts = (
-                await Promise.all(CATEGORY_IDS.map(fetchCategoryProducts))
+                await Promise.all(categoryIds.map(fetchCategoryProducts))
             ).flat();
 
             if (!allProducts || allProducts.length === 0) {

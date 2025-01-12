@@ -11,7 +11,7 @@ const TourGrid = () => {
 
   // Fetch data from the API
   useEffect(() => {
-    axios.get('https://funny-dog-d974027758.strapiapp.com/api/flighttour')
+    axios.get('http://localhost:1337/api/privatetour')
       .then(response => {
         setTours(response.data.products);  // Assuming your response is in this format
       })
@@ -68,7 +68,7 @@ const TourGrid = () => {
                     <p className="flex items-center text-slate-400 font-medium mb-2">
                       <FiMapPin className="text-red-500 size-4 me-1" /> {tour.place}
                     </p>
-                    <Link to={`/tour-detail/${tour.id}`} className="text-lg font-medium hover:text-red-500 duration-500 ease-in-out">
+                    <Link to={`/tour-detail-one/${tour.productCode}`} className="text-lg font-medium hover:text-red-500 duration-500 ease-in-out">
                       {tour.name}
                     </Link>
                   </div>
@@ -86,7 +86,7 @@ const TourGrid = () => {
                   <div className="mt-4 pt-4 flex justify-between items-center border-t border-slate-100 dark:border-gray-800">
                     <h5 className="text-lg font-medium text-red-500">${tour.advertisedPrice}</h5>
 
-                    <Link to={`/tour-detail/${tour.id}`} className="text-slate-400 hover:text-red-500">
+                    <Link to={`/tour-detail-one/${tour.productCode}`} className="text-slate-400 hover:text-red-500">
                       Explore Now <i className="mdi mdi-arrow-right"></i>
                     </Link>
                   </div>
