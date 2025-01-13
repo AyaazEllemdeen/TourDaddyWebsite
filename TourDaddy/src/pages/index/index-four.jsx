@@ -1,35 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 import Tagline from "../../components/tagline";
 import Navbar from "../../components/navbar";
-import Footer from "../../components/footer"
-import Switcher from "../../components/switcher"
+import Footer from "../../components/footer";
+import Switcher from "../../components/switcher";
 import About from '../../components/about';
 import Client from '../../components/client';
 import TourPackages from '../../components/TourPackages';
 
-import bg from "../../assets//images/bg/5.jpg"
+import bg from "../../assets/images/bg/5.jpg";
 
-import { FiCalendar, FiPackage, FiMapPin } from '../../assets/icons/vander'
+import { FiCalendar, FiPackage, FiMapPin } from '../../assets/icons/vander';
 
-
-import '../../../node_modules/react-modal-video/scss/modal-video.scss'
+import '../../../node_modules/react-modal-video/scss/modal-video.scss';
 
 import { Parallax } from 'react-parallax';
 
-import { faqData, packages } from '../../data/data';
-
 export default function IndexFour() {
     let [isOpen, setOpen] = useState(false);
-    let [activeIndex, setActiveIndex] = useState(1)
+    let [activeIndex, setActiveIndex] = useState(1);
+    let [tourCategories, setTourCategories] = useState([]); // State for storing tour categories
+
+    useEffect(() => {
+        const fetchTourCategories = async () => {
+            try {
+                const response = await axios.get('https://funny-dog-d974027758.strapiapp.com/api/categories');
+                // Access the categories key in the response
+                setTourCategories(response.data.categories || []);
+            } catch (error) {
+                console.error("Error fetching tour categories:", error);
+            }
+        };
+
+        fetchTourCategories();
+    }, []);
+
     return (
         <>
             <Tagline />
             <Navbar navclass="defaultscroll is-sticky tagline-height" navlight={true} manuclass="justify-end nav-light" />
-            <section className="relative py-36  bg-cover jarallax" data-jarallax data-speed="0.5">
+            <section className="relative py-36 bg-cover jarallax" data-jarallax data-speed="0.5">
 
-                <Parallax bgImage={bg} bgImageAlt="the cat" strength={200} className='absolute inset-0' />
+                <Parallax bgImage={bg} bgImageAlt="background" strength={200} className='absolute inset-0' />
 
                 <div className="absolute inset-0 bg-slate-900/40"></div>
                 <div className="container relative">
@@ -55,9 +69,9 @@ export default function IndexFour() {
                                             <div className="relative mt-2">
                                                 <FiMapPin className="size-[18px] absolute top-[10px] start-3" />
                                                 <input
-                                                    name="name"
+                                                    name="destination"
                                                     type="text"
-                                                    id="job-keyword"
+                                                    id="destination"
                                                     className="w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
                                                     placeholder="Search"
                                                     value="Bahamas"
@@ -66,32 +80,54 @@ export default function IndexFour() {
                                             </div>
                                         </div>
 
-
                                         <div>
                                             <label className="form-label font-medium text-slate-900 dark:text-white">Select Your Date:</label>
                                             <div className="relative mt-2">
-                                                <FiCalendar className="size-[18px] absolute top-[10px] start-3"></FiCalendar>
-                                                <input name="name" type="text" id="job-keyword" className="w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0 end" placeholder="Select Your Date" />
+                                                <FiCalendar className="size-[18px] absolute top-[10px] start-3" />
+                                                <input
+                                                    name="date"
+                                                    type="date"  
+                                                    id="date"
+                                                    className="w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
+                                                    placeholder="Select Your Date"
+                                                />
                                             </div>
                                         </div>
+
+
 
                                         <div>
                                             <label className="form-label font-medium text-slate-900 dark:text-white">Select Type:</label>
                                             <div className="relative mt-2">
-                                                <FiPackage className="size-[18px] absolute top-[10px] start-3"></FiPackage>
-                                                <select className="form-select w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0">
-                                                    <option disabled defaultValue>Type of Tour</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
+                                                <FiPackage className="size-[18px] absolute top-[10px] start-3" />
+                                                <select
+                                                    className="form-select w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
+                                                // Removed disabled to enable the dropdown
+                                                >
+                                                    <option disabled defaultValue>
+                                                        Type of Tour
+                                                    </option>
+                                                    {tourCategories.length > 0 ? (
+                                                        tourCategories.map((category) => (
+                                                            <option key={category.id} value={category.id}>
+                                                                {category.name}
+                                                            </option>
+                                                        ))
+                                                    ) : (
+                                                        <option>Loading...</option>
+                                                    )}
                                                 </select>
                                             </div>
                                         </div>
 
-                                        <div className="">
-                                            <input type="submit" id="search-buy" name="search" className="py-1 px-5 h-10 inline-block tracking-wide align-middle duration-500 text-base text-center bg-red-500 text-white rounded-md w-full cursor-pointer" value="Search" />
+                                        <div>
+                                            <input
+                                                type="submit"
+                                                id="search"
+                                                name="search"
+                                                className="py-1 px-5 h-10 inline-block tracking-wide align-middle duration-500 text-base text-center bg-red-500 text-white rounded-md w-full cursor-pointer"
+                                                value="Search"
+                                            />
                                         </div>
                                     </div>
                                 </form>
@@ -101,23 +137,14 @@ export default function IndexFour() {
                 </div>
             </section>
 
-            <div className="relative">
-                <div className="shape absolute sm:-bottom-px -bottom-[2px] start-0 end-0 overflow-hidden text-white dark:text-slate-900">
-                    <svg className="w-full h-auto scale-[2.0] origin-top" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
-                    </svg>
-                </div>
-            </div>
-
             <section className="relative md:py-24 py-16">
-            <TourPackages />
+                <TourPackages />
                 <About />
                 <Client />
-
-
             </section>
+
             <Footer />
             <Switcher />
         </>
-    )
+    );
 }

@@ -24,32 +24,27 @@ export default {
                 return products.map((product: any) => product.productCode); // Extract product codes
             };
 
-            // Fetch all product details, including images specific to the product
-            const fetchProductDetails = async (productCode: string) => {
-                const url = `https://api.rezdy.com/v1/products/${productCode}`;
-                const response = await axios.get(url, { params: { apiKey: API_KEY } });
+            // Fetch product availability for a specific product code
+            const fetchProductAvailability = async (productCode: string) => {
+                const startTime = new Date().toISOString();  // Current time in ISO format
+                const endTime = "2050-01-01T00:00:00Z";  // End time set to January 1, 2050
 
-                const product = response.data.product || {};
-                const priceOptions = product.priceOptions || [];
-                const images = product.images || []; // Fetch images directly from the product data
+                const url = `https://api.rezdy.com/v1/availability`;
+                const response = await axios.get(url, {
+                    params: {
+                        apiKey: API_KEY,
+                        productCode: productCode,
+                        startTime: startTime,
+                        endTime: endTime,
+                    },
+                });
 
-                // Return the formatted product details
+                const availability = response.data || [];
+
+                // Return the availability details for the product
                 return {
                     productCode,
-                    name: product.name || "Unknown", 
-                    description: product.description || "No description available", 
-                    priceOptions: priceOptions.map((option: any) => ({
-                        id: option.id,
-                        price: option.price,
-                        label: option.label,
-                        seatsUsed: option.seatsUsed,
-                        productCode: option.productCode,
-                    })),
-                    images: images.slice(0, 4).map((img: any) => ({
-                        id: img.id,
-                        url: img.url,
-                        thumbnailUrl: img.itemUrl,
-                    })),
+                    availability,
                 };
             };
 
@@ -73,19 +68,18 @@ export default {
                 ctx.throw(500, "No products returned from Rezdy API");
             }
 
-            // Fetch product details including description, price options, and images for all product codes
-            const allProducts = await Promise.all(
+            // Fetch product availability for all product codes
+            const allProductAvailability = await Promise.all(
                 allProductCodes.map(async (productCode) => {
-                    return fetchProductDetails(productCode);
+                    return fetchProductAvailability(productCode);
                 })
             );
 
-            // Send the products with pricing, images, and descriptions
-            ctx.send({ products: allProducts });
+            // Send the products' availability data
+            ctx.send({ productsAvailability: allProductAvailability });
         } catch (error: any) {
-            console.error("Error fetching product details:", error.response?.data || error.message);
-            ctx.throw(500, "Failed to fetch product details");
+            console.error("Error fetching product availability:", error.response?.data || error.message);
+            ctx.throw(500, "Failed to fetch product availability");
         }
     },
 };
- 

@@ -57,7 +57,7 @@ export default function TourDetailOne() {
                     </ul>
                 </div>
             </section>
-            <section className="relative md:py-24 py-16">
+            <section className="relative md:py-25 py-16">
                 <div className="container relative">
                     <div className="grid md:grid-cols-20 grid-cols-1 gap-6">
                         <div className="lg:col-span-8 md:col-span-7">
