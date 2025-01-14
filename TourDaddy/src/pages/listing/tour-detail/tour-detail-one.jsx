@@ -67,8 +67,8 @@ export default function TourDetailOne() {
                     const times = [];
 
                     sessions.forEach((session) => {
-                        const date = session.startTimeLocal.split(" ")[0]; // Extract date part (YYYY-MM-DD)
-                        const time = session.startTimeLocal.split(" ")[1]; // Extract time part (HH:MM:SS)
+                        const date = session.startTimeLocal.split(" ")[0]; 
+                        const time = session.startTimeLocal.split(" ")[1]; 
 
                         // Group unique dates
                         if (!dates.includes(date)) {
@@ -103,8 +103,8 @@ export default function TourDetailOne() {
 
     // Handle date change
     const handleDateChange = (e) => {
-        const selectedDate = e.target.value; // Get selected date
-        setSelectedDate(selectedDate); // Set selected date state
+        const selectedDate = e.target.value; 
+        setSelectedDate(selectedDate); 
     };
 
     // Handle quantity change
@@ -367,12 +367,7 @@ export default function TourDetailOne() {
 
                                                 {/* Submit Button */}
                                                 <div className="mt-6">
-                                                    <button
-                                                        type="submit"
-                                                        className="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 transition duration-300"
-                                                    >
-                                                        Submit Booking
-                                                    </button>
+                                                    <button type="submit" className="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 transition duration-300"> Submit Booking</button>
                                                 </div>
                                             </form>
                                         </div>

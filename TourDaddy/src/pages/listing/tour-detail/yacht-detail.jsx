@@ -272,7 +272,7 @@ export default function TourDetailOne() {
                 </div>
             </section>
             <Footer />
-            <Switcher />
+
             {isOpen && (
                 <Lightbox
                     mainSrc={images[photoIndex]}

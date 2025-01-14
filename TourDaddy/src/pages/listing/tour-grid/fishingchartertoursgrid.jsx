@@ -116,7 +116,7 @@ const TourGrid = () => {
       </section>
 
       <Footer />
-      <Switcher />
+      
     </>
   );
 };

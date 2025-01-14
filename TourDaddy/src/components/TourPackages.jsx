@@ -77,7 +77,7 @@ const TourPackages = () => {
                 </div>
 
                 <div className="mt-6 text-center">
-                    <Link to="/tours1" className="text-slate-400 hover:text-red-500 inline-block">
+                    <Link to="/tours/502052" className="text-slate-400 hover:text-red-500 inline-block">
                         See More Tours <i className="mdi mdi-arrow-right align-middle"></i>
                     </Link>
                 </div>

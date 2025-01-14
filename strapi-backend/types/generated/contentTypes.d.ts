@@ -426,6 +426,35 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBookingfinalisationBookingfinalisation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'bookingfinalisations';
+  info: {
+    displayName: 'bookingfinalisation';
+    pluralName: 'bookingfinalisations';
+    singularName: 'bookingfinalisation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::bookingfinalisation.bookingfinalisation'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1330,6 +1359,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::availability.availability': ApiAvailabilityAvailability;
       'api::booking.booking': ApiBookingBooking;
+      'api::bookingfinalisation.bookingfinalisation': ApiBookingfinalisationBookingfinalisation;
       'api::category.category': ApiCategoryCategory;
       'api::combotour.combotour': ApiCombotourCombotour;
       'api::cruiseguesttour.cruiseguesttour': ApiCruiseguesttourCruiseguesttour;

@@ -134,7 +134,34 @@ export default function Aboutus() {
 */}
                 <Client />
 
-                <Blogs />
+                <section className="relative md:pb-32 pb-20 pt-16">
+                    <div className="container mt-16">
+                        <div className="grid grid-cols-1 text-center">
+                            <h2 className="text-3xl font-bold text-gray-800">
+                                Swimming With Pigs in The Bahamas
+                            </h2>
+                            <p className="text-lg text-gray-600 mt-2">
+                                <span className="font-semibold">The original Swimming Pigs</span>
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 justify-items-center mt-8">
+                            <div className="w-full max-w-6xl">
+                                <iframe
+                                    className="w-full aspect-video rounded-lg shadow-lg"
+                                    src="https://www.youtube.com/embed/TgvFgSas2nE"
+                                    title="Tour Daddy - Our Story"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
             </section>
             <div className="container-fluid relative">
                 <div className="grid grid-cols-1 relative">
@@ -162,7 +189,7 @@ export default function Aboutus() {
 
 
             <Footer />
-            <Switcher />
+            
         </>
     )
 }

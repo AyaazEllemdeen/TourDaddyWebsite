@@ -52,9 +52,8 @@ export default function IndexFour() {
                             <h5 className="text-3xl font-dancing text-white">Let’s Go Now</h5>
                             <h4 className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-6xl mb-6 mt-5">Feel The Fresh Place <br /> and Scout the Outdoors with Friends</h4>
                             <p className="text-white/70 text-xl max-w-xl">Planning for a trip? We will organize your trip with the best places and within best budget!</p>
-
                             <div className="mt-6">
-                                <Link to="/tours1" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-red-500 text-white rounded-md">View Packages</Link>
+                                <Link to="/tours/502052" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-red-500 text-white rounded-md">View Packages</Link>
                             </div>
                         </div>
 
@@ -62,7 +61,15 @@ export default function IndexFour() {
                             <div className="bg-white dark:bg-slate-900 rounded-xl shadow dark:shadow-gray-800 p-6 z-10 relative lg:ms-10">
                                 <h4 className="mb-5 text-2xl font-semibold">Search Your Destinations</h4>
 
-                                <form>
+                                <form
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        const selectedCategory = document.getElementById('tourCategory').value;
+                                        if (selectedCategory) {
+                                            window.location.href = `/tours/${selectedCategory}`;
+                                        }
+                                    }}
+                                >
                                     <div className="grid grid-cols-1 gap-3">
                                         <div>
                                             <label className="form-label font-medium text-slate-900 dark:text-white">Destination:</label>
@@ -86,7 +93,7 @@ export default function IndexFour() {
                                                 <FiCalendar className="size-[18px] absolute top-[10px] start-3" />
                                                 <input
                                                     name="date"
-                                                    type="date"  
+                                                    type="date"
                                                     id="date"
                                                     className="w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
                                                     placeholder="Select Your Date"
@@ -94,15 +101,13 @@ export default function IndexFour() {
                                             </div>
                                         </div>
 
-
-
                                         <div>
                                             <label className="form-label font-medium text-slate-900 dark:text-white">Select Type:</label>
                                             <div className="relative mt-2">
                                                 <FiPackage className="size-[18px] absolute top-[10px] start-3" />
                                                 <select
+                                                    id="tourCategory"
                                                     className="form-select w-full py-2 px-3 ps-10 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-md outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
-                                                // Removed disabled to enable the dropdown
                                                 >
                                                     <option disabled defaultValue>
                                                         Type of Tour
@@ -133,6 +138,7 @@ export default function IndexFour() {
                                 </form>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -144,7 +150,7 @@ export default function IndexFour() {
             </section>
 
             <Footer />
-            <Switcher />
+
         </>
     );
 }

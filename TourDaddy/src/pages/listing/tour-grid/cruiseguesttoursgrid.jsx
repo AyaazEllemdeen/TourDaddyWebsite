@@ -11,7 +11,7 @@ const TourGrid = () => {
 
   // Fetch data from the API
   useEffect(() => {
-    axios.get('http://localhost:1337/api/privatetour')
+    axios.get('http://localhost:1337/api/cruiseguesttour')
       .then(response => {
         setTours(response.data.products);  // Assuming your response is in this format
       })
@@ -98,7 +98,7 @@ const TourGrid = () => {
       </section>
 
       <Footer />
-      <Switcher />
+      
     </>
   );
 };

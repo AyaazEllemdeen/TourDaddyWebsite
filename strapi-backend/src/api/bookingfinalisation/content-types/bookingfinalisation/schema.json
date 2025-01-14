@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookingfinalisations",
+  "info": {
+    "singularName": "bookingfinalisation",
+    "pluralName": "bookingfinalisations",
+    "displayName": "bookingfinalisation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

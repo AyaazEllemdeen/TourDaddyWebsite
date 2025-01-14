@@ -45,7 +45,6 @@ export default function Navbar({ navclass, navlight, manuclass }) {
         setSubManu(current);
         window.scrollTo(0, 0);
 
-        // Fetch tour categories from Strapi
         const fetchTourCategories = async () => {
             try {
                 const response = await axios.get('https://funny-dog-d974027758.strapiapp.com/api/categories');
