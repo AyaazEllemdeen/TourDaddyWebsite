@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import image1 from '../../../assets/images/listing/1.jpg'
-import image2 from '../../../assets/images/listing/2.jpg'
-import image3 from '../../../assets/images/listing/3.jpg'
-import image4 from '../../../assets/images/listing/4.jpg'
+import image2 from '../../../assets/images/listing/new1.jpg'
+import image3 from '../../../assets/images/listing/new3.png'
+import image4 from '../../../assets/images/listing/new2.jpg'
 
 import Navbar from "../../../components/navbar";
 import DetailSidebar from "../../../components/detail-sidebar";

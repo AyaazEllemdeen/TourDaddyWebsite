@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import Navbar from "../components/navbar";
 import { Link } from "react-router-dom";
 
-import Blogs from '../components/blogs'
 import Client from '../components/client'
 import About2 from '../components/about2'
 import Footer from '../components/footer';
-import Switcher from '../components/switcher';
+
 
 import { teamData, placeImage } from "../data/data";
 
-import { FiFacebook, FiInstagram, FiLinkedin } from "../assets/icons/vander"
+import { FiInstagram } from "../assets/icons/vander"
 
 import TinySlider from "tiny-slider-react";
 import 'tiny-slider/dist/tiny-slider.css';

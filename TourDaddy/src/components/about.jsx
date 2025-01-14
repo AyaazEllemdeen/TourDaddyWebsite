@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import about from '../assets/images/listing/5.jpg'
+import about from '../assets/images/listing/Exuma.jpg'
 import map from '../assets/images/map-plane-big.png'
 
 import { FiUsers, FiGlobe } from '../assets/icons/vander'
