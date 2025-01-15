@@ -5,7 +5,6 @@ import axios from 'axios';
 import Tagline from "../../components/tagline";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import Switcher from "../../components/switcher";
 import About from '../../components/about';
 import Client from '../../components/client';
 import TourPackages from '../../components/TourPackages';
@@ -27,7 +26,6 @@ export default function IndexFour() {
         const fetchTourCategories = async () => {
             try {
                 const response = await axios.get('https://funny-dog-d974027758.strapiapp.com/api/categories');
-                // Access the categories key in the response
                 setTourCategories(response.data.categories || []);
             } catch (error) {
                 console.error("Error fetching tour categories:", error);
@@ -41,9 +39,9 @@ export default function IndexFour() {
         <>
             <Tagline />
             <Navbar navclass="defaultscroll is-sticky tagline-height" navlight={true} manuclass="justify-end nav-light" />
-            <section className="relative py-36 bg-cover jarallax" data-jarallax data-speed="0.5">
+            <section className="relative py-36 bg-cover jarallax" data-jarallax data-speed="0.5" style={{ height: "900px" }}>
 
-                <Parallax bgImage={bg} bgImageAlt="background" strength={200} className='absolute inset-0' />
+                <Parallax bgImage={bg} bgImageAlt="background" strength={200} className='absolute inset-0' style={{ height: "900px" }}/>
 
                 <div className="absolute inset-0 bg-slate-900/40"></div>
                 <div className="container relative">
@@ -143,7 +141,7 @@ export default function IndexFour() {
                 </div>
             </section>
 
-            <section className="relative md:py-24 py-16">
+            <section className="relative md:py-0 py-0">
                 <TourPackages />
                 <About />
                 <Client />

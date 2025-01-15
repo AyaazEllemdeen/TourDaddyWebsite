@@ -131,7 +131,6 @@ export default function Aboutus() {
                     </div>
                 </div>
 */}
-                <Client />
 
                 <section className="relative md:pb-32 pb-20 pt-16">
                     <div className="container mt-16">
@@ -158,6 +157,7 @@ export default function Aboutus() {
                 </section>
 
 
+                <Client />
 
 
 
@@ -188,7 +188,7 @@ export default function Aboutus() {
 
 
             <Footer />
-            
+
         </>
     )
 }
